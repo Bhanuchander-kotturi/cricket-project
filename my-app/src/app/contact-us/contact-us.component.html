@@ -1,0 +1,43 @@
+<div class="container">
+
+    <h1 [ngStyle]="{'text-align':'center','font-weight' : 'bold'}"> Contact us </h1>
+
+    <hr />
+    <form [formGroup]="contactUsForm" >
+        <!-- first name  -->
+        <div class="row">
+            <mat-form-field>
+                <mat-label>First Name </mat-label>
+                <input matInput type="text" autocomplete="off" formControlName="firstName">
+                <mat-error *ngIf="(contactUsForm.controls['firstName'].hasError('required') && formSubmitted) || 
+            (contactUsForm.get('firstName').invalid && contactUsForm.get('firstName').touched)">
+                    Enter First Name
+                </mat-error>
+            </mat-form-field>
+            <!-- last name -->
+            <mat-form-field>
+                <mat-label>Last Name </mat-label>
+                <input matInput type="text" autocomplete="off" formControlName="lastName">
+                <mat-error *ngIf="(contactUsForm.controls['lastName'].hasError('required') && formSubmitted) || 
+            (contactUsForm.get('lastName').invalid && contactUsForm.get('lastName').touched)">
+                    Enter last Name
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <!-- Email Id -->
+        <div class="row">
+            <div class="col">
+                <mat-form-field>
+                    <mat-label>Email Id </mat-label>
+                    <input matInput type="text" autocomplete="off" formControlName="emailId">
+                    <mat-error *ngIf="(contactUsForm.controls['emailId'].hasError('required') && formSubmitted) || 
+                (contactUsForm.get('emailId').invalid && contactUsForm.get('emailId').touched)">
+                        Enter Email Id
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <button mat-raised-button color="primary" type="submit" [disabled]="contactUsForm.invalid"> Submit </button>
+    </form>
+   
+</div>

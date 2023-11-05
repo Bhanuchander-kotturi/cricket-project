@@ -1,0 +1,34 @@
+<div class="container">
+    <h2> Login </h2>
+    <hr />
+    <form [formGroup]="loginForm" (ngSubmit)="loginAdmin()">
+        <!-- User ID Column  -->
+        <div class="row">
+            <div class="col-md-5">
+                <mat-form-field>
+                    <mat-label> User ID </mat-label>
+                    <input matInput type="text" autocomplete="off" formControlName="adminId">
+                    <mat-error *ngIf="(loginForm.controls['adminId'].hasError('required') && formSubmitted) || 
+                    (loginForm.get('adminId').invalid && loginForm.get('adminId').touched)">
+                        Enter User ID
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <!-- Password Column -->
+        <div class="row">
+            <div class="col-md-5">
+                <mat-form-field>
+                    <mat-label> Password </mat-label>
+                    <input matInput type="password" autocomplete="off" formControlName="adminPassword">
+                    <mat-error *ngIf="(loginForm.controls['adminPassword'].hasError('required') && formSubmitted) || 
+                    (loginForm.get('adminPassword').invalid && loginForm.get('adminPassword').touched)">
+                        Enter Password
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid"> Login </button>
+    </form>
+</div>

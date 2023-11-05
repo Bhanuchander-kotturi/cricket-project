@@ -1,0 +1,27 @@
+<div class="container">
+    <h2> Point Table of Series </h2>
+
+    <table class="table">
+           <thead>
+            <tr>
+                <th> Id </th>
+                <th> Teams </th>
+                <th> Played </th>
+                <th> Won </th>
+                <th> Loss </th>
+                <th> Points </th>
+            </tr>
+           </thead>
+           <tbody>
+            <tr *ngFor="let point of points">
+                <td> {{point.id}} </td>
+                <td> {{point.team}} </td>
+                <td> {{point.played}} </td>
+                <td> {{point.won}} </td>
+                <td> {{point.loss}} </td>
+                <td> {{point.pts}}</td>
+            </tr>
+           </tbody>
+    </table>
+
+</div>

@@ -1,0 +1,34 @@
+<div class="container">
+    <h2>Adding Player</h2>
+    <hr />
+
+    <form [formGroup]="playerForm" (ngSubmit)="addPlayer">
+        <div class="row">
+            <div class="col">
+                <mat-form-field>
+                    <mat-label> ID </mat-label>
+                    <input matInput type="number" autocomplete="off" formControlName="id">
+                </mat-form-field>
+                <mat-error *ngIf="(playerForm.controls['id'].hasError('required') && formSubmitted) || 
+                        (playerForm.get('id').invalid && playerForm.get('id').touched)">
+                    Enter ID
+                </mat-error>
+            </div>
+
+            <div class="col">
+                <mat-form-field>
+                    <mat-label> Name </mat-label>
+                    <input matInput type="text" autocomplete="off" formControlName="name">
+                </mat-form-field>
+                <mat-error *ngIf="(playerForm.controls['name'].hasError('required') && formSubmitted) || 
+                (playerForm.get('name').invalid && playerForm.get('name').touched)">
+                    Enter Name
+                </mat-error>
+
+            </div>
+
+        </div>
+
+    </form>
+    <button mat-raised-button color="primary" type="submit" [disabled]="playerForm.invalid"> Submit </button>
+</div>

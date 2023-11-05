@@ -1,0 +1,35 @@
+<div class="container">
+    <h2>Adding Schedule</h2>
+    <hr/>
+
+    <form [formGroup]="scheduleForm">
+        <div class="row">
+            <div class="col">
+                <mat-form-field>
+                    <mat-label> ID </mat-label>
+                    <input matInput type="number" autocomplete="off" formControlName="id">
+                </mat-form-field>
+                <mat-error *ngIf="(scheduleForm.controls['id'].hasError('required') && formSubmitted) || 
+                        (scheduleForm.get('id').invalid && scheduleForm.get('id').touched)">
+                    Enter ID
+                </mat-error>
+            </div>
+
+            <div class="col">
+                <mat-form-field>
+                    <mat-label> Name </mat-label>
+                    <input matInput type="text" autocomplete="off" formControlName="name">
+                </mat-form-field>
+                <mat-error *ngIf="(scheduleForm.controls['name'].hasError('required') && formSubmitted) || 
+                (scheduleForm.get('name').invalid && scheduleForm.get('name').touched)">
+                    Enter Name
+                </mat-error>
+
+            </div>
+
+        </div>
+
+    </form>
+    <button mat-raised-button color="primary" type="submit" [disabled]="scheduleForm.invalid"> Submit </button>
+
+</div>

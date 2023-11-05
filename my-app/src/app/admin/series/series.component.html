@@ -1,0 +1,34 @@
+<div class="container">
+    <h2>Adding Series</h2>
+    <hr/>
+
+    <form [formGroup]="seriesForm" (ngSubmit)="addSeries">
+        <div class="row">
+            <div class="col">
+                <mat-form-field>
+                    <mat-label> ID </mat-label>
+                    <input matInput type="number" autocomplete="off" formControlName="id">
+                </mat-form-field>
+                <mat-error *ngIf="(seriesForm.controls['id'].hasError('required') && formSubmitted) || 
+                        (seriesForm.get('id').invalid && seriesForm.get('id').touched)">
+                    Enter ID
+                </mat-error>
+            </div>
+
+            <div class="col">
+                <mat-form-field>
+                    <mat-label> Name </mat-label>
+                    <input matInput type="text" autocomplete="off" formControlName="name">
+                </mat-form-field>
+                <mat-error *ngIf="(seriesForm.controls['name'].hasError('required') && formSubmitted) || 
+                (seriesForm.get('name').invalid && seriesForm.get('name').touched)">
+                    Enter Name
+                </mat-error>
+
+            </div>
+
+        </div>
+
+    </form>
+    <button mat-raised-button color="primary" type="submit" [disabled]="seriesForm.invalid"> Submit </button>
+</div>
