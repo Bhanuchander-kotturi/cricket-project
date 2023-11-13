@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
-import { onedaySeries } from 'src/app/models/admin';
+import { series } from 'src/app/models/series';
 import { AdminServiceService } from 'src/app/services/admin-service.service';
 
 @Component({
@@ -19,18 +19,22 @@ export class SeriesComponent implements OnInit{
   ngOnInit(): void {
     this.seriesForm = this.formBuilder.group({
       id: new FormControl(null, [Validators.required]),
-      name: new FormControl(null, [Validators.required])
+      seriesName: new FormControl(null, [Validators.required]),
+      seriesDate : new FormControl(null,[Validators.required]),
+      seriesTime : new FormControl(null,[Validators.required])
     })
   }
 
   addSeries(){
     this.formSubmitted = true;
-    const seriesData : onedaySeries  = {
-      id:this.seriesForm.controls['id'].value,
-      name : this.seriesForm.controls['name'].value
+    const seriesData : series  = {
+      id : this.seriesForm.controls['id'].value,
+      seriesName : this.seriesForm.controls['seriesName'].value,
+      seriesDate : this.seriesForm.controls['seriesDate'].value,
+      seriesTime : this.seriesForm.controls['seriesTime'].value
     }
     console.log(seriesData,"Player Form Data");
-    this.adminService.addPlayer(seriesData).subscribe((data) => {
+    this.adminService.addSeries(seriesData).subscribe((data) => {
       console.log(data);
       this.seriesForm.reset();
     })

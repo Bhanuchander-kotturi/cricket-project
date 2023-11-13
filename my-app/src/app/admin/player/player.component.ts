@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
-import { player } from 'src/app/models/admin';
+import { players } from 'src/app/models/adminPlayer';
 import { AdminServiceService } from 'src/app/services/admin-service.service';
 
 
@@ -20,21 +20,25 @@ export class PlayerComponent implements OnInit {
   ngOnInit(): void {
     this.playerForm = this.formBuilder.group({
       id: new FormControl(null, [Validators.required]),
-      name: new FormControl(null, [Validators.required])
+      name: new FormControl(null, [Validators.required]),
+      birthDate : new FormControl(null,[Validators.required]),
+      age : new FormControl(null,[Validators.required])
     })
   }
 
   addPlayer(){
     this.formSubmitted = true;
-    const playerData : player  = {
-      id:this.playerForm.controls['id'].value,
-      name : this.playerForm.controls['name'].value
+    const playerData : players  = {
+      id : this.playerForm.controls['id'].value,
+      name : this.playerForm.controls['name'].value,
+      birthDate :  this.playerForm.controls['birthDate'].value,
+      age : this.playerForm.controls['age'].value
     }
     console.log(playerData,"Player Form Data");
     this.adminService.addPlayer(playerData).subscribe((data) => {
       console.log(data);
       this.playerForm.reset();
-    })
-  }
+    }) 
+   }
 
 }

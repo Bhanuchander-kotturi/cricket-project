@@ -8,15 +8,19 @@ import { TeamComponent } from './team/team.component';
 import { PlayerComponent } from './player/player.component';
 import { SeriesComponent } from './series/series.component';
 import { ScheduleComponent } from './schedule/schedule.component';
+import { PointsTableComponent } from './points-table/points-table.component';
+
 
 // Angular Material Styles 
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
-import {MatFormFieldModule, matFormFieldAnimations} from '@angular/material/form-field';
+import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
-import { PointsTableComponent } from './points-table/points-table.component';
+
+
 
 const myRoute : Routes = [
+  {path : '',component : TeamComponent},
   {path : 'teamcmp',component:TeamComponent},
   {path: 'playercmp',component:PlayerComponent},
   {path:'seriescmp', component : SeriesComponent},
@@ -32,7 +36,7 @@ const myRoute : Routes = [
     PlayerComponent,
     SeriesComponent,
     ScheduleComponent,
-    PointsTableComponent
+    PointsTableComponent,
   ],
   imports: [
     CommonModule,

@@ -1,10 +1,10 @@
 <div class="container">
     <h2>Adding Series</h2>
-    <hr/>
+    <hr />
 
-    <form [formGroup]="seriesForm" (ngSubmit)="addSeries">
+    <form [formGroup]="seriesForm" (ngSubmit)="addSeries()">
         <div class="row">
-            <div class="col">
+            <div class="col-md-5">
                 <mat-form-field>
                     <mat-label> ID </mat-label>
                     <input matInput type="number" autocomplete="off" formControlName="id">
@@ -14,21 +14,43 @@
                     Enter ID
                 </mat-error>
             </div>
-
-            <div class="col">
-                <mat-form-field>
-                    <mat-label> Name </mat-label>
-                    <input matInput type="text" autocomplete="off" formControlName="name">
-                </mat-form-field>
-                <mat-error *ngIf="(seriesForm.controls['name'].hasError('required') && formSubmitted) || 
-                (seriesForm.get('name').invalid && seriesForm.get('name').touched)">
-                    Enter Name
-                </mat-error>
-
-            </div>
-
         </div>
-
+        <div class="row">
+            <div class="col-md-5">
+                <mat-form-field>
+                    <mat-label> Series Name </mat-label>
+                    <input matInput type="text" autocomplete="off" formControlName="seriesName">
+                </mat-form-field>
+                <mat-error *ngIf="(seriesForm.controls['seriesName'].hasError('required') && formSubmitted) || 
+                (seriesForm.get('seriesName').invalid && seriesForm.get('seriesName').touched)">
+                    Enter Series Name
+                </mat-error>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5">
+                <mat-form-field>
+                    <mat-label> Date </mat-label>
+                    <input matInput type="date" autocomplete="off" formControlName="seriesDate">
+                </mat-form-field>
+                <mat-error *ngIf="(seriesForm.controls['seriesDate'].hasError('required') && formSubmitted) || 
+                (seriesForm.get('seriesDate').invalid && seriesForm.get('seriesDate').touched)">
+                    Enter Date 
+                </mat-error>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5">
+                <mat-form-field>
+                    <mat-label> Time </mat-label>
+                    <input matInput type="time" autocomplete="off" formControlName="seriesTime">
+                </mat-form-field>
+                <mat-error *ngIf="(seriesForm.controls['seriesTime'].hasError('required') && formSubmitted) || 
+                (seriesForm.get('seriesTime').invalid && seriesForm.get('seriesTime').touched)">
+                    Enter Time 
+                </mat-error>
+            </div>
+        </div>
+        <button mat-raised-button color="primary" type="submit" [disabled]="seriesForm.invalid"> Submit </button>
     </form>
-    <button mat-raised-button color="primary" type="submit" [disabled]="seriesForm.invalid"> Submit </button>
 </div>

@@ -8,15 +8,19 @@ import {HttpClientModule} from '@angular/common/http';
 //components
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { LoginComponent } from './login/login.component';
 
 //Angular-materials
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
-import { AboutUsComponent } from './about-us/about-us.component';
-import { LoginComponent } from './login/login.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { AddCredentialsComponent } from './add-credentials/add-credentials.component';
+
+
+
 
 @NgModule({
   declarations: [
@@ -24,7 +28,8 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
     HomeComponent,
     AboutUsComponent,
     LoginComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    AddCredentialsComponent,
   ],
   imports: [
     BrowserModule,

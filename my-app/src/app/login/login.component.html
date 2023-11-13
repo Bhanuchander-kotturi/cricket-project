@@ -1,18 +1,18 @@
 <div class="container">
     <h2> Login </h2>
     <hr />
-    <form [formGroup]="loginForm" (ngSubmit)="loginAdmin()">
-        <!-- User ID Column  -->
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <!-- Login ID Column  -->
         <div class="row">
             <div class="col-md-5">
                 <mat-form-field>
-                    <mat-label> User ID </mat-label>
-                    <input matInput type="text" autocomplete="off" formControlName="adminId">
-                    <mat-error *ngIf="(loginForm.controls['adminId'].hasError('required') && formSubmitted) || 
-                    (loginForm.get('adminId').invalid && loginForm.get('adminId').touched)">
-                        Enter User ID
-                    </mat-error>
+                    <mat-label> Login Id </mat-label>
+                    <input matInput type="text" autocomplete="off" formControlName="loginId">
                 </mat-form-field>
+                <mat-error *ngIf="(loginForm.controls['loginId'].hasError('required') && formSubmitted) || 
+                    (loginForm.get('loginId').invalid && loginForm.get('loginId').touched)">
+                    Enter Login Id
+                </mat-error>
             </div>
         </div>
 
@@ -21,12 +21,12 @@
             <div class="col-md-5">
                 <mat-form-field>
                     <mat-label> Password </mat-label>
-                    <input matInput type="password" autocomplete="off" formControlName="adminPassword">
-                    <mat-error *ngIf="(loginForm.controls['adminPassword'].hasError('required') && formSubmitted) || 
-                    (loginForm.get('adminPassword').invalid && loginForm.get('adminPassword').touched)">
-                        Enter Password
-                    </mat-error>
+                    <input matInput type="password" autocomplete="off" formControlName="password">
                 </mat-form-field>
+                <mat-error *ngIf="(loginForm.controls['password'].hasError('required') && formSubmitted) || 
+                    (loginForm.get('password').invalid && loginForm.get('password').touched)">
+                    Enter Password
+                </mat-error>
             </div>
         </div>
         <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid"> Login </button>

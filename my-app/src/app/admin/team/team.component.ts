@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { teams } from 'src/app/models/team';
 import { AdminServiceService } from 'src/app/services/admin-service.service';
-import {team } from '../../models/admin';
 
 @Component({
   selector: 'app-team',
@@ -19,22 +19,22 @@ export class TeamComponent implements OnInit {
     ngOnInit(): void {
       this.teamForm = this.formBuilder.group({
         id : new FormControl(null,[Validators.required]),
-        name : new FormControl(null,[Validators.required])
+        teamName : new FormControl(null,[Validators.required])
       })
     }
 
     addTeam(){
       this.formSubmitted = true;
-      const teamData : team  = {
-        id:this.teamForm.controls['id'].value,
-        name : this.teamForm.controls['name'].value
+      const teamDetails : teams = {
+        id : this.teamForm.controls['id'].value,
+        teamName : this.teamForm.controls['teamName'].value
+      
       }
-      console.log(teamData, "Team Form Data");
-      this.adminService.addTeam(teamData).subscribe((data) => {
+      console.log(teamDetails);
+      this.adminService.addTeam(teamDetails).subscribe((data) => {
         console.log(data);
         this.teamForm.reset();
       })
-      
     }
 
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { details } from 'src/app/models/player';
+import { PlayerServiceService } from 'src/app/services/player-service.service';
 
 @Component({
   selector: 'app-details',
@@ -9,13 +10,13 @@ import { details } from 'src/app/models/player';
 })
 export class DetailsComponent implements OnInit {
 
+  // detail : details;
+
   detailsForm: FormGroup;
   protected formSubmitted: boolean = false;
 
-  constructor(private formBuilder: FormBuilder) {
-
-  }
-
+  constructor(private formBuilder: FormBuilder,
+    private playerService : PlayerServiceService) { }
 
   ngOnInit(): void {
     this.detailsForm = this.formBuilder.group({
@@ -39,6 +40,10 @@ export class DetailsComponent implements OnInit {
       bowlStyle: this.detailsForm.controls['bowlStyle'].value
     }
     console.log(dataDetails, "Employee Form Data");
-    
+
+  this.playerService.addDetails(dataDetails).subscribe((data) => {
+    console.log(data);
+  })
+
   }
 }

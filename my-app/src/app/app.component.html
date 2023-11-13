@@ -1,14 +1,16 @@
 <mat-toolbar color="primary">
-  <button mat-raised-button color="primary" (click)="navigateHome()">Home</button> &nbsp;&nbsp;
-  <button mat-raised-button color="primary" (click)="navigateAboutUs()">About-Us</button> &nbsp;&nbsp;
-  <button mat-raised-button color="primary" (click)="navigateLogin()">Login</button> &nbsp;&nbsp;
-  <button mat-raised-button color="primary" (click)="navigateContactUs()">Contact-Us</button> &nbsp;&nbsp;
-  <button mat-raised-button color="primary" (click)="navigateAdmin1()">Team</button> &nbsp;&nbsp;
-  <button mat-raised-button color="primary" (click)="navigateAdmin2()">Player</button> &nbsp;&nbsp;
-  <button mat-raised-button color="primary" (click)="navigateAdmin3()">Series</button> &nbsp;&nbsp;
-  <button mat-raised-button color="primary" (click)="navigateAdmin4()">schedule</button> &nbsp;&nbsp;
-  <button mat-raised-button color="primary" (click)="navigateAdmin5()">Points Table</button> &nbsp;&nbsp;
-  <button mat-raised-button color="primary" (click)="navigatePlayer1()">Details</button> &nbsp;&nbsp;
+  <button mat-raised-button *ngIf="!isAdmin && !isPlayer" color="primary" (click)="navigateHome()">Home</button> &nbsp;&nbsp;
+  <button mat-raised-button *ngIf="!isAdmin && !isPlayer" color="primary" (click)="navigateAboutUs()">About-Us</button> &nbsp;&nbsp;
+  <button mat-raised-button *ngIf="!isAdmin && !isPlayer && !isLogin" color="primary" (click)="navigateLogin()">Login</button> &nbsp;&nbsp;
+  <button mat-raised-button *ngIf="!isAdmin && !isPlayer" color="primary" (click)="navigateContactUs()">Contact-Us</button> &nbsp;&nbsp;
+  <button mat-raised-button *ngIf="isAdmin" color="primary" (click)="credentials()">Credentials Form </button> &nbsp;&nbsp;
+  <button mat-raised-button *ngIf="isAdmin" color="primary" (click)="navigateAdmin1()">Team</button> &nbsp;&nbsp;
+  <button mat-raised-button *ngIf="isAdmin" color="primary" (click)="navigateAdmin2()">Player</button> &nbsp;&nbsp;
+  <button mat-raised-button *ngIf="isAdmin" color="primary" (click)="navigateAdmin3()">Series</button> &nbsp;&nbsp;
+  <button mat-raised-button *ngIf="isAdmin" color="primary" (click)="navigateAdmin4()">schedule</button> &nbsp;&nbsp;
+  <button mat-raised-button *ngIf="isAdmin" color="primary" (click)="navigateAdmin5()">Points Table</button> &nbsp;&nbsp;
+  <button mat-raised-button *ngIf="isPlayer" color="primary" (click)="navigatePlayer1()">Details</button> &nbsp;&nbsp;
+  <button mat-raised-button *ngIf="isLogin" color="primary" (click)="logout()">Logout</button> &nbsp;&nbsp;
 </mat-toolbar>
 
 <router-outlet></router-outlet>

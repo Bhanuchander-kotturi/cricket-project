@@ -1,7 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { player, onedaySeries, team, schedule } from '../models/admin';
+import { teams } from '../models/team';
+import { players } from '../models/adminPlayer';
+import { series } from '../models/series';
+import { schedules } from '../models/schedule';
+// import { player, onedaySeries, team, schedule } from '../models/admin';
 
 
 @Injectable({
@@ -13,52 +17,36 @@ export class AdminServiceService {
 
   constructor(private http: HttpClient) { }
 
-  //Adding Team
-  addTeam(roles: team): Observable<any> {
+  // Team component
+  addTeam(team : teams) : Observable<any> {
     const httpOptions = {
-      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+      headers : new HttpHeaders({'Content-Type' : 'application/json'})
     }
-    return this.http.post(this.url + '/team', roles, httpOptions)
+    return this.http.post(this.url + '/teams', team ,httpOptions)
   }
 
-  //Adding Player
-  addPlayer(roles: player): Observable<any> {
+  //player component
+  addPlayer(player : players) : Observable<any>{
     const httpOptions = {
-      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+      headers : new HttpHeaders({'Content-Type' : 'application/json'})
     }
-    return this.http.post(this.url + '/player', roles, httpOptions)
-  }
+    return this.http.post(this.url + '/players',player,httpOptions)
+  }  
 
-  //Adding Series
-  addSeries(roles: onedaySeries): Observable<any> {
+  //series component
+  addSeries(series : series) : Observable<any> {
     const httpOptions = {
-      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+      headers : new HttpHeaders({'Content-Type' : 'application/json'})
     }
-    return this.http.post(this.url + '/series', roles, httpOptions)
+    return this.http.post(this.url + '/series',series,httpOptions)
   }
 
-
-  //Adding Schedule
-  addSchedule(roles: schedule): Observable<any> {
+  //schedule component
+  addSchedule(schedule : schedules) : Observable<any> {
     const httpOptions = {
-      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+      headers : new HttpHeaders({'Content-Type' : 'application/json'})
     }
-    return this.http.post(this.url + '/schedule', roles, httpOptions)
+    return this.http.post(this.url + '/schedules',schedule,httpOptions)
   }
-
-  //Get details by Admin Id and Password
-  getAdminInfo(adminId: any, password: any): Observable<any> {
-    return this.http.get(this.url + '/admin', { params: { adminId: adminId, password: password }, responseType: 'json' },)
-  }
-
-  // View All Admins 
-  viewAdmin(): Observable<any> {
-    return this.http.get(this.url + '/users', { responseType: 'json' })
-  }
-
-  getAdmin() : Observable<any> {
-    return this.http.get(this.url +'/admin', {responseType: 'json'})
-  }
-
 
 }

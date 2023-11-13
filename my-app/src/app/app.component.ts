@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,DoCheck } from '@angular/core';
 import { Router } from '@angular/router';
+// import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -8,8 +9,11 @@ import { Router } from '@angular/router';
 })
 export class AppComponent implements OnInit {
   title = 'my-app';
+  user : string = 'BHANUCHANDER';
   data : any;
-
+  // adminCheck : Observable<any>;
+  // playerCheck : Observable<any>;
+  // noneCheck : Observable<any>;
 
   constructor(private router : Router) {}
 
@@ -18,15 +22,20 @@ export class AppComponent implements OnInit {
   }
 
   get isAdmin(){
-    return sessionStorage.getItem['role'] === 'admin';
+    return sessionStorage.getItem('role') === 'admin'
   }
 
-  get isPlayer() {
-    return sessionStorage.getItem['role'] === 'player';
+  get isPlayer(){
+    return sessionStorage.getItem('role') === 'player'
   }
 
   get isLogin() {
     return sessionStorage.getItem('isLoggedIn') === 'true'
+  }
+
+  logout(){
+    sessionStorage.clear();
+    this.router.navigate(['login'])
   }
 
   navigateHome() {
@@ -44,6 +53,11 @@ export class AppComponent implements OnInit {
   navigateContactUs(){
     this.router.navigate(['contactUs'])
   }
+  
+  credentials(){
+    this.router.navigate(['keys'])
+  }
+
 
   navigateAdmin1(){
     this.router.navigate(['admin/teamcmp'])

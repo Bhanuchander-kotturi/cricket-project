@@ -7,24 +7,12 @@ import { AdminServiceService } from 'src/app/services/admin-service.service';
   templateUrl: './points-table.component.html',
   styleUrls: ['./points-table.component.css']
 })
-export class PointsTableComponent implements OnInit {
-
-  admin : any;
-  points : any;
+export class PointsTableComponent {
 
   constructor(private adminService : AdminServiceService,private router : Router,
     private activatedRoute : ActivatedRoute) {
     
   }
 
-  ngOnInit(): void {
-    this.admin = this.activatedRoute.snapshot.data['adminData']
-    console.log(this.admin);
-    
-    this.adminService.getAdmin().subscribe((data) => {
-      this.admin = data;
-      console.log(this.admin)
-    })
-  }
 
 }

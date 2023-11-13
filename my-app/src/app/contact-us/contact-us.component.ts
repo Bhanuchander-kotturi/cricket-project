@@ -1,28 +1,44 @@
 import { Component,OnInit } from '@angular/core';
-import { FormGroup,Validators,FormControl, FormBuilder } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { ContactusService } from '../services/contactus.service';
+import { contacts } from '../models/contact';
 
 @Component({
   selector: 'app-contact-us',
   templateUrl: './contact-us.component.html',
   styleUrls: ['./contact-us.component.css']
 })
-export class ContactUsComponent  implements OnInit{
+export class ContactUsComponent implements OnInit {
 
-  contactUsForm : FormGroup;
-  protected formSubmitted: boolean = false;
 
-  constructor(private formBuilder : FormBuilder) {
+  contactForm : FormGroup;
+  protected formSubmitted : boolean = false;
+
+  constructor(private formBuilder : FormBuilder,
+    private contactUsService : ContactusService) {
     
   }
 
   ngOnInit(): void {
-    this.contactUsForm = this.formBuilder.group({
-      firstName : new FormControl(null, [Validators.required]),
-      lastName: new FormControl(null, [Validators.required]),
-      emailId : new FormControl(null,[Validators.required])
+    this.contactForm = this.formBuilder.group({
+      name : new FormControl(null,[Validators.required]),
+      emailAddress : new FormControl(null,[Validators.required]),
+      message : new FormControl(null,[Validators.required])
     })
-
-
   }
 
+  addContact(){
+    this.formSubmitted = true;
+    const contactDetails : contacts = {
+      name : this.contactForm.controls['name'].value,
+      emailAdderss : this.contactForm.controls['emailAddress'].value,
+      message : this.contactForm.controls['message'].value
+    }
+    console.log(contactDetails);
+    this.contactUsService.addContact(contactDetails).subscribe((data) => {
+      console.log(data);
+      this.contactForm.reset();
+    })
+    
+  }
 }

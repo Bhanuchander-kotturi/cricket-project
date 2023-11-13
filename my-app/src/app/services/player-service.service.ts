@@ -12,30 +12,30 @@ export class PlayerServiceService {
 
   constructor(private http :HttpClient) { }
 
-  addDetails(detail : details) : Observable<any>{
+  addDetails(detail : details) : Observable<any> {
     const httpOptions = {
       headers : new HttpHeaders({'Content-Type' : 'application/json'})
     }
     return this.http.post(this.url + '/details',detail,httpOptions)
   }
 
-  viewPlayers(): Observable<any> {
-    return this.http.get(this.url + '/details', {responseType : 'json'})
-  }
+  // viewPlayers(): Observable<any> {
+  //   return this.http.get(this.url + '/details', {responseType : 'json'})
+  // }
 
-  deletePlayers(name : any): Observable<any>{
-    return this.http.delete(this.url + '/details/' +name, {responseType : 'json'})
-  }
+  // deletePlayers(name : any): Observable<any>{
+  //   return this.http.delete(this.url + '/details/' +name, {responseType : 'json'})
+  // }
 
-  getPlayerByName(name : any) :Observable<any>{
-    return this.http.get(this.url + '/details/' + name, {responseType : 'json'})
-  }
+  // getPlayerByName(name : any) :Observable<any>{
+  //   return this.http.get(this.url + '/details/' + name, {responseType : 'json'})
+  // }
 
-  updatePlayers(detail : details) : Observable<any> {
-    const httpOptions = {
-      headers : new HttpHeaders({'Content-Type' : 'application/json'})
-    }
-    console.log(detail);
-    return this.http.put(this.url + '/details/' + detail.name,detail,httpOptions)
-  }
+  // updatePlayers(detail : details) : Observable<any> {
+  //   const httpOptions = {
+  //     headers : new HttpHeaders({'Content-Type' : 'application/json'})
+  //   }
+  //   console.log(detail);
+  //   return this.http.put(this.url + '/details/' + detail.name,detail,httpOptions)
+  // }
 }

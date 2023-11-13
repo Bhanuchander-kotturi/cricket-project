@@ -1,9 +1,79 @@
 {
-    "admin": [
-
-    ],
-
-    "player": [
-        
-    ]
+  "details": [
+    {
+      "name": "Bhanu",
+      "birthDay": "13/10/1997",
+      "age": "25",
+      "team": "india",
+      "batStyle": "right",
+      "bowlStyle": "right",
+      "id": 1
+    },
+    {
+      "name": "bhanuchander",
+      "birthDay": "12",
+      "age": "26",
+      "team": "ind",
+      "batStyle": "right",
+      "bowlStyle": "left",
+      "id": 2
+    }
+  ],
+  "teams": [
+    {
+      "id": 1,
+      "teamName": "India"
+    }
+  ],
+  "players": [
+    {
+      "id": 1,
+      "name": "Bhanuchander",
+      "birthDate": "13/10/1998",
+      "age": 25
+    }
+  ],
+  "series": [
+    {
+      "id": 1,
+      "seriesName": "T20",
+      "seriesDate": "2023-11-11",
+      "seriesTime": "10:00"
+    }
+  ],
+  "schedules": [
+    {
+      "id": 1,
+      "scheduleDate": "2023-11-11",
+      "scheduleTime": "23:30"
+    }
+  ],
+  "contacts": [
+    {
+      "name": "unknown",
+      "emailAdderss": "Unknown1@gmail.com",
+      "message": "issue",
+      "id": 1
+    }
+  ],
+  "credentials": [
+    {
+      "id": 1,
+      "role": "admin",
+      "loginId": "bhanu123",
+      "password": "bhanu123"
+    },
+    {
+      "id": 2,
+      "role": "player",
+      "loginId": "prabhas@143",
+      "password": "prabhas143"
+    },
+    {
+      "id": 3,
+      "role": "none",
+      "loginId": "login1st",
+      "password": "login1st"
+    }
+  ]
 }

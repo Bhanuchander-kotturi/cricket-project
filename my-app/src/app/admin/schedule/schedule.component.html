@@ -1,10 +1,10 @@
 <div class="container">
     <h2>Adding Schedule</h2>
-    <hr/>
+    <hr />
 
-    <form [formGroup]="scheduleForm">
+    <form [formGroup]="scheduleForm" (ngSubmit)="addSchedule()">
         <div class="row">
-            <div class="col">
+            <div class="col-md-5">
                 <mat-form-field>
                     <mat-label> ID </mat-label>
                     <input matInput type="number" autocomplete="off" formControlName="id">
@@ -14,22 +14,31 @@
                     Enter ID
                 </mat-error>
             </div>
-
-            <div class="col">
-                <mat-form-field>
-                    <mat-label> Name </mat-label>
-                    <input matInput type="text" autocomplete="off" formControlName="name">
-                </mat-form-field>
-                <mat-error *ngIf="(scheduleForm.controls['name'].hasError('required') && formSubmitted) || 
-                (scheduleForm.get('name').invalid && scheduleForm.get('name').touched)">
-                    Enter Name
-                </mat-error>
-
-            </div>
-
         </div>
-
+        <div class="row">
+            <div class="col-md-5">
+                <mat-form-field>
+                    <mat-label> Date </mat-label>
+                    <input matInput type="date" autocomplete="off" formControlName="scheduleDate">
+                </mat-form-field>
+                <mat-error *ngIf="(scheduleForm.controls['scheduleDate'].hasError('required') && formSubmitted) || 
+                (scheduleForm.get('scheduleDate').invalid && scheduleForm.get('scheduleDate').touched)">
+                    Enter Date 
+                </mat-error>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5">
+                <mat-form-field>
+                    <mat-label> Time </mat-label>
+                    <input matInput type="time" autocomplete="off" formControlName="scheduleTime">
+                </mat-form-field>
+                <mat-error *ngIf="(scheduleForm.controls['scheduleTime'].hasError('required') && formSubmitted) || 
+                (scheduleForm.get('scheduleTime').invalid && scheduleForm.get('scheduleTime').touched)">
+                    Enter Date 
+                </mat-error>
+            </div>
+        </div>
+        <button mat-raised-button color="primary" type="submit" [disabled]="scheduleForm.invalid"> Submit </button>
     </form>
-    <button mat-raised-button color="primary" type="submit" [disabled]="scheduleForm.invalid"> Submit </button>
-
 </div>

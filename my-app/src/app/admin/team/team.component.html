@@ -2,9 +2,9 @@
     <h2>Adding Team</h2>
     <hr />
 
-    <form [formGroup]="teamForm" (ngSubmit)="addTeam">
+    <form [formGroup]="teamForm" (ngSubmit)="addTeam()">
         <div class="row">
-            <div class="col">
+            <div class="col-md-5">
                 <mat-form-field>
                     <mat-label> ID </mat-label>
                     <input matInput type="number" autocomplete="off" formControlName="id">
@@ -14,21 +14,19 @@
                     Enter ID
                 </mat-error>
             </div>
-
-            <div class="col">
-                <mat-form-field>
-                    <mat-label> Name </mat-label>
-                    <input matInput type="text" autocomplete="off" formControlName="name">
-                </mat-form-field>
-                <mat-error *ngIf="(teamForm.controls['name'].hasError('required') && formSubmitted) || 
-                (teamForm.get('name').invalid && teamForm.get('name').touched)">
-                    Enter Name
-                </mat-error>
-
-            </div>
-
         </div>
-
+        <div class="row">
+            <div class="col-md-5">
+                <mat-form-field>
+                    <mat-label> Team Name </mat-label>
+                    <input matInput type="text" autocomplete="off" formControlName="teamName">
+                </mat-form-field>
+                <mat-error *ngIf="(teamForm.controls['teamName'].hasError('required') && formSubmitted) || 
+                (teamForm.get('teamName').invalid && teamForm.get('teamName').touched)">
+                    Enter Team Name
+                </mat-error>
+            </div>
+        </div>
+        <button mat-raised-button color="primary" type="submit" [disabled]="teamForm.invalid"> Submit </button>
     </form>
-    <button mat-raised-button color="primary" type="submit" [disabled]="teamForm.invalid"> Submit </button>
 </div>

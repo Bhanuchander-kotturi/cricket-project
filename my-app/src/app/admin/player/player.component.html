@@ -2,9 +2,9 @@
     <h2>Adding Player</h2>
     <hr />
 
-    <form [formGroup]="playerForm" (ngSubmit)="addPlayer">
+    <form [formGroup]="playerForm" (ngSubmit)="addPlayer()">
         <div class="row">
-            <div class="col">
+            <div class="col-md-5">
                 <mat-form-field>
                     <mat-label> ID </mat-label>
                     <input matInput type="number" autocomplete="off" formControlName="id">
@@ -14,8 +14,9 @@
                     Enter ID
                 </mat-error>
             </div>
-
-            <div class="col">
+        </div>
+        <div class="row">
+            <div class="col-md-5">
                 <mat-form-field>
                     <mat-label> Name </mat-label>
                     <input matInput type="text" autocomplete="off" formControlName="name">
@@ -24,11 +25,33 @@
                 (playerForm.get('name').invalid && playerForm.get('name').touched)">
                     Enter Name
                 </mat-error>
-
             </div>
-
         </div>
-
+        <div class="row">
+            <div class="col-md-5">
+                <mat-form-field>
+                    <mat-label> Date of Birth </mat-label>
+                    <input matInput type="text" autocomplete="off" formControlName="birthDate">
+                </mat-form-field>
+                <mat-error *ngIf="(playerForm.controls['birthDate'].hasError('required') && formSubmitted) ||
+                (playerForm.get('birthDate').invalid && playerForm.get('birthDate').touched)">
+                    Enter Date of Birth
+                </mat-error>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5">
+                <mat-form-field>
+                    <mat-label> Age </mat-label>
+                    <input matInput type="number" autocomplete="off" formControlName="age">
+                </mat-form-field>
+                <mat-error *ngIf="(playerForm.controls['age'].hasError('required') && formSubmitted) ||
+                (playerForm.get('age').invalid && playerForm.get('age').touched)">
+                    Enter Age
+                </mat-error>
+            </div>
+        </div>
+        <button mat-raised-button color="primary" type="submit" [disabled]="playerForm.invalid"> Submit </button>
     </form>
-    <button mat-raised-button color="primary" type="submit" [disabled]="playerForm.invalid"> Submit </button>
+
 </div>
