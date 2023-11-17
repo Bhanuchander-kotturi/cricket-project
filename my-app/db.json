@@ -17,11 +17,31 @@
       "batStyle": "right",
       "bowlStyle": "left",
       "id": 2
+    },
+    {
+      "id": 3,
+      "name": "kohli",
+      "birthDay": "1988-11-05",
+      "age": 35,
+      "team": "India",
+      "batStyle": "Right arm batsmen",
+      "bowlStyle": "Right arm bowler"
     }
   ],
   "teams": [
     {
       "id": 1,
+      "playerName": "Bhanu",
+      "teamName": "India"
+    },
+    {
+      "id": 2,
+      "playerName": "bhanuchander",
+      "teamName": "India"
+    },
+    {
+      "id": 3,
+      "playerName": "kohli",
       "teamName": "India"
     }
   ],
@@ -39,21 +59,34 @@
       "seriesName": "T20",
       "seriesDate": "2023-11-11",
       "seriesTime": "10:00"
+    },
+    {
+      "id": 2,
+      "seriesName": "ODI",
+      "seriesDate": "2023-12-02",
+      "seriesTime": "14:00"
     }
   ],
   "schedules": [
     {
       "id": 1,
-      "scheduleDate": "2023-11-11",
-      "scheduleTime": "23:30"
+      "name": "India",
+      "scheduleDate": "2023-11-19",
+      "scheduleTime": "14:00"
+    },
+    {
+      "id": 2,
+      "name": "Pakistan",
+      "scheduleDate": "2023-11-19",
+      "scheduleTime": "14:00"
     }
   ],
   "contacts": [
     {
-      "name": "unknown",
-      "emailAdderss": "Unknown1@gmail.com",
-      "message": "issue",
-      "id": 1
+      "id": 1,
+      "name": "bhanuchander",
+      "emailAddress": "bhanu123@gmail.com",
+      "message": "this is good website"
     }
   ],
   "credentials": [
@@ -74,6 +107,24 @@
       "role": "none",
       "loginId": "login1st",
       "password": "login1st"
+    }
+  ],
+  "updatePoints": [
+    {
+      "id": 1,
+      "teams": "india",
+      "played": 1,
+      "won": 1,
+      "loss": 0,
+      "points": 2
+    },
+    {
+      "id": 2,
+      "teams": "pakistan",
+      "played": 1,
+      "won": 0,
+      "loss": 1,
+      "points": 0
     }
   ]
 }

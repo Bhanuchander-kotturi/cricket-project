@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { players } from 'src/app/models/adminPlayer';
+import { teams } from 'src/app/models/team';
 import { AdminServiceService } from 'src/app/services/admin-service.service';
 
 
@@ -10,6 +11,9 @@ import { AdminServiceService } from 'src/app/services/admin-service.service';
   styleUrls: ['./player.component.css']
 })
 export class PlayerComponent implements OnInit {
+  // @Input() data? : string;
+
+  url : string = 'http://localhost:3000';
 
   playerForm: FormGroup;
   protected formSubmitted: boolean = false;

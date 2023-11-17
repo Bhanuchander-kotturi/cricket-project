@@ -1,0 +1,31 @@
+ <div class="container">
+    <h2> Players List </h2>
+    <hr/>
+    
+    <table class="table">
+        <thead>
+            <tr>
+                <th> ID </th>
+                <th> Name </th>
+                <th> Birth Day </th>
+                <th> Age </th>
+                <th> Team </th>
+                <th> Bat Style </th>
+                <th> Bowl Style </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let person of details">
+                <td> {{person.id}} </td>
+                <td> {{person.name}} </td>
+                <td> {{person.birthDay}} </td>
+                <td> {{person.age}} </td>
+                <td> {{person.team}} </td>
+                <td> {{person.batStyle}} </td>
+                <td> {{person.bowlStyle}} </td>
+            </tr>
+        </tbody>
+
+    </table>
+
+</div>

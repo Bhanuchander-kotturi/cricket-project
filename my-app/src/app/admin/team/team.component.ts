@@ -10,6 +10,8 @@ import { AdminServiceService } from 'src/app/services/admin-service.service';
 })
 export class TeamComponent implements OnInit {
 
+  // data = 'hello this is sender component';
+  
   teamForm : FormGroup;
   protected formSubmitted : boolean = false;
   
@@ -19,6 +21,7 @@ export class TeamComponent implements OnInit {
     ngOnInit(): void {
       this.teamForm = this.formBuilder.group({
         id : new FormControl(null,[Validators.required]),
+        playerName : new FormControl(null,[Validators.required]),
         teamName : new FormControl(null,[Validators.required])
       })
     }
@@ -27,6 +30,7 @@ export class TeamComponent implements OnInit {
       this.formSubmitted = true;
       const teamDetails : teams = {
         id : this.teamForm.controls['id'].value,
+        playerName : this.teamForm.controls['playerName'].value,
         teamName : this.teamForm.controls['teamName'].value
       
       }

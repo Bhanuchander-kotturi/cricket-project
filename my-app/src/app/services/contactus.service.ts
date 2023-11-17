@@ -19,4 +19,8 @@ export class ContactusService {
     }
     return this.http.post(this.url + '/contacts',contact,httpOptions)
   }
+
+  viewContact() : Observable<any>{
+    return this.http.get(this.url + '/contacts',{responseType : 'json'})
+  }
 }

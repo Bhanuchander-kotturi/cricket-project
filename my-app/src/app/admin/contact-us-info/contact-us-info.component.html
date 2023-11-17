@@ -1,0 +1,23 @@
+<div class="container">
+    <h2> Contact us Info </h2>
+    <hr/>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th> ID </th>
+                <th> Name </th>
+                <th> Email Address </th>
+                <th> Message </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let view of contacts">
+                <td> {{view.id}} </td>
+                <td> {{view.name}} </td>
+                <td> {{view.emailAddress}} </td>
+                <td> {{view.message}} </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

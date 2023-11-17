@@ -1,4 +1,5 @@
 export class details{
+    id : any;
     name : any;
     birthDay : any;
     age :  any;

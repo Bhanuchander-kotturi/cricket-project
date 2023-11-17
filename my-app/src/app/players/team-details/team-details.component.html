@@ -1,0 +1,22 @@
+<div class="container">
+    <h2> View Teams </h2>
+    <hr/>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th> ID </th>
+                <th> Player Name </th>
+                <th> Team Name </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let view of teams">
+                <td> {{view.id}} </td>
+                <td> {{view.playerName}} </td>
+                <td> {{view.teamName}} </td>
+            </tr>
+        </tbody>
+
+    </table>
+</div>

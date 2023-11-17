@@ -20,6 +20,7 @@ export class ScheduleComponent implements OnInit {
   ngOnInit(): void {
     this.scheduleForm = this.formBuilder.group({
       id: new FormControl(null, [Validators.required]),
+      name : new FormControl(null,[Validators.required]),
       scheduleDate : new FormControl(null,[Validators.required]),
       scheduleTime : new FormControl(null,[Validators.required])
     })
@@ -29,6 +30,7 @@ export class ScheduleComponent implements OnInit {
     this.formSubmitted = true;
     const scheduleData : schedules  = {
       id : this.scheduleForm.controls['id'].value,
+      name : this.scheduleForm.controls['name'].value,
       scheduleDate : this.scheduleForm.controls['scheduleDate'].value,
       scheduleTime :  this.scheduleForm.controls['scheduleTime'].value
     }

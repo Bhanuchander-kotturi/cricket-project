@@ -1,0 +1,25 @@
+<div class="container">
+    <h2> View Schedule </h2>
+    <hr/>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th> Id </th>
+                <th> Team Name </th>
+                <th> Date </th>
+                <th> Time </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let view of schedules">
+                <td> {{view.id}} </td>
+                <td> {{view.name}} </td>
+                <td> {{view.scheduleDate}} </td>
+                <td> {{view.scheduleTime}} </td>
+            </tr>
+        </tbody>
+
+    </table>
+
+</div>

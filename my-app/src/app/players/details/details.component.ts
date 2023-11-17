@@ -20,6 +20,7 @@ export class DetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.detailsForm = this.formBuilder.group({
+      id : new FormControl(null,[Validators.required]),
       name: new FormControl(null, [Validators.required]),
       birthDay: new FormControl(null, [Validators.required]),
       age: new FormControl(null, [Validators.required]),
@@ -32,6 +33,7 @@ export class DetailsComponent implements OnInit {
   addDetails() {
     this.formSubmitted = true;
     const dataDetails: details = {
+      id : this.detailsForm.controls['id'].value,
       name: this.detailsForm.controls['name'].value,
       birthDay: this.detailsForm.controls['birthDay'].value,
       age: this.detailsForm.controls['age'].value,
@@ -43,6 +45,7 @@ export class DetailsComponent implements OnInit {
 
   this.playerService.addDetails(dataDetails).subscribe((data) => {
     console.log(data);
+    this.detailsForm.reset();
   })
 
   }

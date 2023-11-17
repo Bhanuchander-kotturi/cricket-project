@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import {  Router } from '@angular/router';
 import { AdminServiceService } from 'src/app/services/admin-service.service';
 
 @Component({
@@ -7,11 +7,19 @@ import { AdminServiceService } from 'src/app/services/admin-service.service';
   templateUrl: './points-table.component.html',
   styleUrls: ['./points-table.component.css']
 })
-export class PointsTableComponent {
+export class PointsTableComponent implements OnInit{
 
-  constructor(private adminService : AdminServiceService,private router : Router,
-    private activatedRoute : ActivatedRoute) {
+  updatePoints : any;
+
+  constructor(private adminService : AdminServiceService,private router : Router) {
     
+  }
+
+  ngOnInit(): void {
+    this.adminService.viewDetails().subscribe((data) => {
+      this.updatePoints = data;
+      console.log(this.updatePoints);
+    })
   }
 
 

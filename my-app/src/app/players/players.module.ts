@@ -12,16 +12,26 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import { UpdateDetailsComponent } from './update-details/update-details.component';
+import { TeamDetailsComponent } from './team-details/team-details.component';
+import { ScheduleDetailsComponent } from './schedule-details/schedule-details.component';
 
 
 const myRoutings : Routes = [
-  {path : 'playerDetails',component : DetailsComponent}
+  // {path : '',component:UpdateDetailsComponent},
+  {path : 'playerDetails',component : UpdateDetailsComponent},
+  {path : 'updateDetails',component:UpdateDetailsComponent},
+  {path : 'viewTeams',component:TeamDetailsComponent},
+  {path : 'viewSchedule',component:ScheduleDetailsComponent}
 ]
 
 
 @NgModule({
   declarations: [
-    DetailsComponent
+    DetailsComponent,
+    UpdateDetailsComponent,
+    TeamDetailsComponent,
+    ScheduleDetailsComponent
   ],
   imports: [
     CommonModule,

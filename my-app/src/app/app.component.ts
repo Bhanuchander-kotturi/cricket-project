@@ -79,8 +79,32 @@ export class AppComponent implements OnInit {
     this.router.navigate(['admin/pointsTable'])
   }
 
+  navigateContactInfo(){
+    this.router.navigate(['admin/contactInfo'])
+  }
+
+  seriesDetails(){
+    this.router.navigate(['admin/seriesDetails'])
+  }
+
+  matchDetails(){
+    this.router.navigate(['admin/matchDetails'])
+  }
+
   navigatePlayer1(){
     this.router.navigate(['player/playerDetails'])
+  }
+
+  updateDetails(){
+    this.router.navigate(['player/updateDetails'])
+  }
+
+  viewTeams(){
+    this.router.navigate(['player/viewTeams'])
+  }
+
+  viewSchedule(){
+    this.router.navigate(['player/viewSchedule'])
   }
 
 }

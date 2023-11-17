@@ -17,6 +17,14 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 
+//guards
+// import { searchguardGuard } from '../guards/searchguard.guard';
+import { formDeactivateGuard } from '../guards/form-deactivate.guard';
+import { moduleGuard } from '../guards/module.guard';
+import { SeriesDetailsComponent } from './series-details/series-details.component';
+import { UpdateMatchComponent } from './update-match/update-match.component';
+import { ContactUsInfoComponent } from './contact-us-info/contact-us-info.component';
+
 
 
 const myRoute : Routes = [
@@ -24,8 +32,11 @@ const myRoute : Routes = [
   {path : 'teamcmp',component:TeamComponent},
   {path: 'playercmp',component:PlayerComponent},
   {path:'seriescmp', component : SeriesComponent},
-  {path:'schedulecmp', component : ScheduleComponent},
-  {path : 'pointsTable', component : PointsTableComponent}
+  {path:'schedulecmp', canMatch:[moduleGuard],component : ScheduleComponent},
+  {path : 'seriesDetails',component:SeriesDetailsComponent},
+  {path : 'matchDetails',component:UpdateMatchComponent},
+  {path : 'pointsTable', component : PointsTableComponent},
+  {path : 'contactInfo',component:ContactUsInfoComponent}
 
 ]
 
@@ -37,6 +48,9 @@ const myRoute : Routes = [
     SeriesComponent,
     ScheduleComponent,
     PointsTableComponent,
+    SeriesDetailsComponent,
+    UpdateMatchComponent,
+    ContactUsInfoComponent,
   ],
   imports: [
     CommonModule,

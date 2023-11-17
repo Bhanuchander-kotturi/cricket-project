@@ -1,0 +1,25 @@
+<div class="container">
+    <h2>Series Details</h2>
+    <hr/>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th> Id </th>
+                <th> Series Name </th>
+                <th> Series Date </th>
+                <th> Series Time </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let details of series">
+                <td> {{details.id}} </td>
+                <td> {{details.seriesName}} </td>
+                <td> {{details.seriesDate}} </td>
+                <td> {{details.seriesTime}} </td>
+            </tr>
+        </tbody>
+
+    </table>
+
+</div>

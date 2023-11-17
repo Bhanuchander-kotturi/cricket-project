@@ -13,14 +13,14 @@
             </tr>
            </thead>
            <tbody>
-            <!-- <tr *ngFor="let point of points">
-                <td> {{point.id}} </td>
-                <td> {{point.team}} </td>
-                <td> {{point.played}} </td>
-                <td> {{point.won}} </td>
-                <td> {{point.loss}} </td>
-                <td> {{point.pts}}</td>
-            </tr> -->
+            <tr *ngFor="let view of updatePoints">
+                <td> {{view.id}} </td>
+                <td> {{view.teams}} </td>
+                <td> {{view.played}} </td>
+                <td> {{view.won}} </td>
+                <td> {{view.loss}} </td>
+                <td> {{view.points}} </td>
+            </tr>
            </tbody>
     </table>
 

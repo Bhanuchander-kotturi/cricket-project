@@ -21,6 +21,7 @@ export class ContactUsComponent implements OnInit {
 
   ngOnInit(): void {
     this.contactForm = this.formBuilder.group({
+      id : new FormControl(null,[Validators.required]),
       name : new FormControl(null,[Validators.required]),
       emailAddress : new FormControl(null,[Validators.required]),
       message : new FormControl(null,[Validators.required])
@@ -30,8 +31,9 @@ export class ContactUsComponent implements OnInit {
   addContact(){
     this.formSubmitted = true;
     const contactDetails : contacts = {
+      id : this.contactForm.controls['id'].value,
       name : this.contactForm.controls['name'].value,
-      emailAdderss : this.contactForm.controls['emailAddress'].value,
+      emailAddress : this.contactForm.controls['emailAddress'].value,
       message : this.contactForm.controls['message'].value
     }
     console.log(contactDetails);

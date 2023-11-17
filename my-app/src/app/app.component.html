@@ -1,3 +1,4 @@
+<app-header></app-header>
 <mat-toolbar color="primary">
   <button mat-raised-button *ngIf="!isAdmin && !isPlayer" color="primary" (click)="navigateHome()">Home</button> &nbsp;&nbsp;
   <button mat-raised-button *ngIf="!isAdmin && !isPlayer" color="primary" (click)="navigateAboutUs()">About-Us</button> &nbsp;&nbsp;
@@ -8,9 +9,16 @@
   <button mat-raised-button *ngIf="isAdmin" color="primary" (click)="navigateAdmin2()">Player</button> &nbsp;&nbsp;
   <button mat-raised-button *ngIf="isAdmin" color="primary" (click)="navigateAdmin3()">Series</button> &nbsp;&nbsp;
   <button mat-raised-button *ngIf="isAdmin" color="primary" (click)="navigateAdmin4()">schedule</button> &nbsp;&nbsp;
+  <button mat-raised-button *ngIf="isAdmin" color="primary" (click)="seriesDetails()">Series Match Details</button> &nbsp;&nbsp;
+  <button mat-raised-button *ngIf="isAdmin" color="primary" (click)="matchDetails()">Match Details </button> &nbsp;&nbsp;
   <button mat-raised-button *ngIf="isAdmin" color="primary" (click)="navigateAdmin5()">Points Table</button> &nbsp;&nbsp;
-  <button mat-raised-button *ngIf="isPlayer" color="primary" (click)="navigatePlayer1()">Details</button> &nbsp;&nbsp;
+  <button mat-raised-button *ngIf="isAdmin" color="primary" (click)="navigateContactInfo()">Contact-Us Info</button> &nbsp;&nbsp;
+  <button mat-raised-button *ngIf="isAdmin" color="primary" (click)="navigatePlayer1()">Personal Details</button> &nbsp;&nbsp;
+  <button mat-raised-button *ngIf="isPlayer" color="primary" (click)="updateDetails()">View Player Details</button> &nbsp;&nbsp;
+  <button mat-raised-button *ngIf="isPlayer" color="primary" (click)="viewTeams()">View Teams</button> &nbsp;&nbsp;
+  <button mat-raised-button *ngIf="isPlayer" color="primary" (click)="viewSchedule()">View Schedule</button> &nbsp;&nbsp;
   <button mat-raised-button *ngIf="isLogin" color="primary" (click)="logout()">Logout</button> &nbsp;&nbsp;
 </mat-toolbar>
 
 <router-outlet></router-outlet>
+<app-footer></app-footer>

@@ -12,6 +12,7 @@ export class PlayerServiceService {
 
   constructor(private http :HttpClient) { }
 
+  //personal Details
   addDetails(detail : details) : Observable<any> {
     const httpOptions = {
       headers : new HttpHeaders({'Content-Type' : 'application/json'})
@@ -19,23 +20,16 @@ export class PlayerServiceService {
     return this.http.post(this.url + '/details',detail,httpOptions)
   }
 
-  // viewPlayers(): Observable<any> {
-  //   return this.http.get(this.url + '/details', {responseType : 'json'})
-  // }
+  viewDetails() : Observable<any>{
+    return this.http.get(this.url + '/details',{responseType : 'json'})
+  }
 
-  // deletePlayers(name : any): Observable<any>{
-  //   return this.http.delete(this.url + '/details/' +name, {responseType : 'json'})
-  // }
+  //Teams component
+  viewTeams() : Observable<any>{
+    return this.http.get(this.url + '/teams', {responseType : 'json'})
+  }
 
-  // getPlayerByName(name : any) :Observable<any>{
-  //   return this.http.get(this.url + '/details/' + name, {responseType : 'json'})
-  // }
-
-  // updatePlayers(detail : details) : Observable<any> {
-  //   const httpOptions = {
-  //     headers : new HttpHeaders({'Content-Type' : 'application/json'})
-  //   }
-  //   console.log(detail);
-  //   return this.http.put(this.url + '/details/' + detail.name,detail,httpOptions)
-  // }
+  viewSchedule() : Observable<any>{
+    return this.http.get(this.url + '/schedules', {responseType : 'json'})
+  }
 }

@@ -3,82 +3,98 @@
     <hr />
 
     <form [formGroup]="detailsForm" (ngSubmit)="addDetails()">
+
         <div class="row">
-            <!-- Name Column -->
+            <!-- Id Column -->
             <div class="col-md-5">
                 <mat-form-field>
-                    <mat-label> Name </mat-label>
-                    <input matInput type="text" autocomplete="off" formControlName="name">
+                    <mat-label> ID </mat-label>
+                    <input matInput type="number" autocomplete="off" formControlName="id">
                 </mat-form-field>
-                <mat-error *ngIf="(detailsForm.controls['name'].hasError('required') && formSubmitted) || 
+                <mat-error *ngIf="(detailsForm.controls['id'].hasError('required') && formSubmitted) || 
+                        (detailsForm.get('id').invalid && detailsForm.get('id').touched)">
+                    Enter ID
+                </mat-error>
+            </div>
+            <div class="row">
+                <!-- Name Column -->
+                <div class="col-md-5">
+                    <mat-form-field>
+                        <mat-label> Name </mat-label>
+                        <input matInput type="text" autocomplete="off" formControlName="name">
+                    </mat-form-field>
+                    <mat-error *ngIf="(detailsForm.controls['name'].hasError('required') && formSubmitted) || 
                         (detailsForm.get('name').invalid && detailsForm.get('name').touched)">
-                    Enter Name
-                </mat-error>
-            </div>
-            <!-- Birth Day column -->
-            <div class="col-md-5">
-                <mat-form-field>
-                    <mat-label> Birth Day </mat-label>
-                    <input matInput type="text" autocomplete="off" formControlName="birthDay">
-                </mat-form-field>
-                <mat-error *ngIf="(detailsForm.controls['birthDay'].hasError('required') && formSubmitted) || 
+                        Enter Name
+                    </mat-error>
+                </div>
+                <!-- Birth Day column -->
+                <div class="col-md-5">
+                    <mat-form-field>
+                        <mat-label> Birth Day </mat-label>
+                        <input matInput type="date" autocomplete="off" formControlName="birthDay">
+                    </mat-form-field>
+                    <mat-error *ngIf="(detailsForm.controls['birthDay'].hasError('required') && formSubmitted) || 
                         (detailsForm.get('birthDay').invalid && detailsForm.get('birthDay').touched)">
-                    Enter Birth Day
-                </mat-error>
-            </div>
-            <div class="row">
+                        Enter Birth Day
+                    </mat-error>
+                </div>
+                <div class="row">
 
-                <!-- Age Column -->
-                <div class="col-md-5">
-                    <mat-form-field>
-                        <mat-label> Age </mat-label>
-                        <input matInput type="text" autocomplete="off" formControlName="age">
-                    </mat-form-field>
-                    <mat-error *ngIf="(detailsForm.controls['age'].hasError('required') && formSubmitted) || 
+                    <!-- Age Column -->
+                    <div class="col-md-5">
+                        <mat-form-field>
+                            <mat-label> Age </mat-label>
+                            <input matInput type="number" autocomplete="off" formControlName="age">
+                        </mat-form-field>
+                        <mat-error *ngIf="(detailsForm.controls['age'].hasError('required') && formSubmitted) || 
                         (detailsForm.get('age').invalid && detailsForm.get('age').touched)">
-                        Enter Age
-                    </mat-error>
-                </div>
-                <!-- Team column -->
-                <div class="col-md-5">
-                    <mat-form-field>
-                        <mat-label> Team </mat-label>
-                        <input matInput type="text" autocomplete="off" formControlName="team">
-                    </mat-form-field>
-                    <mat-error *ngIf="(detailsForm.controls['team'].hasError('required') && formSubmitted) || 
+                            Enter Age
+                        </mat-error>
+                    </div>
+                    <!-- Team column -->
+                    <div class="col-md-5">
+                        <mat-form-field>
+                            <mat-label> Team </mat-label>
+                            <input matInput type="text" autocomplete="off" formControlName="team">
+                        </mat-form-field>
+                        <mat-error *ngIf="(detailsForm.controls['team'].hasError('required') && formSubmitted) || 
                         (detailsForm.get('team').invalid && detailsForm.get('team').touched)">
-                        Enter Team
-                    </mat-error>
+                            Enter Team
+                        </mat-error>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <!-- Bat Style Column -->
-                <div class="col-md-5">
-                    <mat-form-field>
-                        <mat-label> Bat Style </mat-label>
-                        <input matInput type="text" autocomplete="off" formControlName="batStyle">
-                    </mat-form-field>
-                    <mat-error *ngIf="(detailsForm.controls['batStyle'].hasError('required') && formSubmitted) || 
+                <div class="row">
+                    <!-- Bat Style Column -->
+                    <div class="col-md-5">
+                        <mat-form-field>
+                            <mat-label> Bat Style </mat-label>
+                            <input matInput type="text" autocomplete="off" formControlName="batStyle">
+                        </mat-form-field>
+                        <mat-error *ngIf="(detailsForm.controls['batStyle'].hasError('required') && formSubmitted) || 
                         (detailsForm.get('batStyle').invalid && detailsForm.get('batStyle').touched)">
-                        Enter Bat Style
-                    </mat-error>
-                </div>
+                            Enter Bat Style
+                        </mat-error>
+                    </div>
 
-                <!-- Bowl Style Column -->
-                <div class="col-md-5">
-                    <mat-form-field>
-                        <mat-label> Bowl Style </mat-label>
-                        <input matInput type="text" autocomplete="off" formControlName="bowlStyle">
-                    </mat-form-field>
-                    <mat-error *ngIf="(detailsForm.controls['bowlStyle'].hasError('required') && formSubmitted) || 
+                    <!-- Bowl Style Column -->
+                    <div class="col-md-5">
+                        <mat-form-field>
+                            <mat-label> Bowl Style </mat-label>
+                            <input matInput type="text" autocomplete="off" formControlName="bowlStyle">
+                        </mat-form-field>
+                        <mat-error *ngIf="(detailsForm.controls['bowlStyle'].hasError('required') && formSubmitted) || 
                         (detailsForm.get('bowlStyle').invalid && detailsForm.get('bowlStyle').touched)">
-                        Enter Bowl Style
-                    </mat-error>
+                            Enter Bowl Style
+                        </mat-error>
+                    </div>
                 </div>
             </div>
         </div>
         <div>
-            <button mat-raised-button color="primary" type="submit" [disabled]="detailsForm.invalid"> Submit </button>
+            <button mat-raised-button color="primary" type="submit" [disabled]="detailsForm.invalid"> Submit
+            </button>
         </div>
     </form>
+
 </div>

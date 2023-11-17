@@ -9,5 +9,5 @@ import { Component } from '@angular/core';
 export class HomeComponent {
   title = 'angular latest version';
   imageUrl = 400;
-  isResponsive = true;
+  isResponsive = false;
 }

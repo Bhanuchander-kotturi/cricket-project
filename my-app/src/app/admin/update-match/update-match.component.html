@@ -1,0 +1,77 @@
+<div class="container">
+    <h2> Update Match </h2>
+    <hr/>
+    <form [formGroup]="updateForm" (ngSubmit)="addMatches()">
+        <div class="row">
+            <div class="col-md-5">
+                <mat-form-field>
+                    <mat-label> ID </mat-label>
+                    <input matInput type="number" autocomplete="off" formControlName="id">
+                </mat-form-field>
+                <mat-error *ngIf="(updateForm.controls['id'].hasError('required') && formSubmitted) || 
+                    (updateForm.get('id').invalid && updateForm.get('id').touched)">
+                    Enter ID
+                </mat-error>
+            </div>
+            <div class="col-md-5">
+                <mat-form-field>
+                    <mat-label> Teams </mat-label>
+                    <input matInput type="text" autocomplete="off" formControlName="teams">
+                </mat-form-field>
+                <mat-error *ngIf="(updateForm.controls['teams'].hasError('required') && formSubmitted) || 
+                    (updateForm.get('teams').invalid && updateForm.get('teams').touched)">
+                    Enter Your Team
+                </mat-error>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5">
+                <mat-form-field>
+                    <mat-label> Matches Played </mat-label>
+                    <input matInput type="number" autocomplete="off" formControlName="played">
+                </mat-form-field>
+                <mat-error *ngIf="(updateForm.controls['played'].hasError('required') && formSubmitted) || 
+                    (updateForm.get('played').invalid && updateForm.get('played').touched)">
+                    Enter Your Matches PLayed 
+                </mat-error>
+            </div>
+            <div class="col-md-5">
+                <mat-form-field>
+                    <mat-label> Matches Won </mat-label>
+                    <input matInput type="number" autocomplete="off" formControlName="won">
+                </mat-form-field>
+                <mat-error *ngIf="(updateForm.controls['won'].hasError('required') && formSubmitted) || 
+                    (updateForm.get('won').invalid && updateForm.get('won').touched)">
+                    Enter Matches Woned
+                </mat-error>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5">
+                <mat-form-field>
+                    <mat-label> Matches Loss </mat-label>
+                    <input matInput type="number" autocomplete="off" formControlName="loss">
+                </mat-form-field>
+                <mat-error *ngIf="(updateForm.controls['loss'].hasError('required') && formSubmitted) || 
+                    (updateForm.get('loss').invalid && updateForm.get('loss').touched)">
+                    Enter Matches Lossed
+                </mat-error>
+            </div>
+            <div class="col-md-5">
+                <mat-form-field>
+                    <mat-label> Points </mat-label>
+                    <input matInput type="number" autocomplete="off" formControlName="points">
+                </mat-form-field>
+                <mat-error *ngIf="(updateForm.controls['id'].hasError('required') && formSubmitted) || 
+                    (updateForm.get('points').invalid && updateForm.get('points').touched)">
+                    Enter Your Points
+                </mat-error>
+            </div>
+        </div>
+
+        <button mat-raised-button color="primary" type="submit" [disabled]="updateForm.invalid"> Submit </button>
+
+    </form>
+
+
+</div>
