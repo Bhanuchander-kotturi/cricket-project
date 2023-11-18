@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
       if(roles.role === 'admin'){
         this.router.navigate(['admin/teamcmp'])
       } else if(roles.role === 'player') {
-        this.router.navigate(['player/playerDetails'])
+        this.router.navigate(['player/updateDetails'])
       } 
     })
     

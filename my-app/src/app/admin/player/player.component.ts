@@ -25,8 +25,7 @@ export class PlayerComponent implements OnInit {
     this.playerForm = this.formBuilder.group({
       id: new FormControl(null, [Validators.required]),
       name: new FormControl(null, [Validators.required]),
-      birthDate : new FormControl(null,[Validators.required]),
-      age : new FormControl(null,[Validators.required])
+      team : new FormControl(null,[Validators.required])
     })
   }
 
@@ -35,8 +34,7 @@ export class PlayerComponent implements OnInit {
     const playerData : players  = {
       id : this.playerForm.controls['id'].value,
       name : this.playerForm.controls['name'].value,
-      birthDate :  this.playerForm.controls['birthDate'].value,
-      age : this.playerForm.controls['age'].value
+      team : this.playerForm.controls['team'].value
     }
     console.log(playerData,"Player Form Data");
     this.adminService.addPlayer(playerData).subscribe((data) => {

@@ -9,6 +9,7 @@
                 <th> Series Name </th>
                 <th> Series Date </th>
                 <th> Series Time </th>
+                <th> Actions </th>
             </tr>
         </thead>
         <tbody>
@@ -17,6 +18,10 @@
                 <td> {{details.seriesName}} </td>
                 <td> {{details.seriesDate}} </td>
                 <td> {{details.seriesTime}} </td>
+                <td>
+                    <button mat-button color="primary" (click)="editSeries(details.id)">Edit</button>
+                    <button mat-button color="warn" (click)="deleteSeries(details.id)">Delete</button>
+                </td>
             </tr>
         </tbody>
 

@@ -11,7 +11,6 @@ import { AddCredentialsComponent } from './add-credentials/add-credentials.compo
 
 import { formDeactivateGuard } from './guards/form-deactivate.guard';
 import { searchguardGuard } from './guards/searchguard.guard';
-import { moduleGuard } from './guards/module.guard';
 
 
 const routes: Routes = [

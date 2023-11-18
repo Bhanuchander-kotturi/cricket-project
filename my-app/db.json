@@ -31,53 +31,27 @@
   "teams": [
     {
       "id": 1,
-      "playerName": "Bhanu",
-      "teamName": "India"
-    },
-    {
-      "id": 2,
-      "playerName": "bhanuchander",
-      "teamName": "India"
-    },
-    {
-      "id": 3,
-      "playerName": "kohli",
       "teamName": "India"
     }
   ],
   "players": [
     {
       "id": 1,
-      "name": "Bhanuchander",
-      "birthDate": "13/10/1998",
-      "age": 25
-    }
-  ],
-  "series": [
-    {
-      "id": 1,
-      "seriesName": "T20",
-      "seriesDate": "2023-11-11",
-      "seriesTime": "10:00"
+      "name": "bhanu",
+      "team": "india"
     },
     {
       "id": 2,
-      "seriesName": "ODI",
-      "seriesDate": "2023-12-02",
-      "seriesTime": "14:00"
+      "name": "vinod nayak",
+      "team": "australia"
     }
   ],
+  "series": [],
   "schedules": [
     {
       "id": 1,
       "name": "India",
-      "scheduleDate": "2023-11-19",
-      "scheduleTime": "14:00"
-    },
-    {
-      "id": 2,
-      "name": "Pakistan",
-      "scheduleDate": "2023-11-19",
+      "scheduleDate": "2023-12-01",
       "scheduleTime": "14:00"
     }
   ],
@@ -117,14 +91,6 @@
       "won": 1,
       "loss": 0,
       "points": 2
-    },
-    {
-      "id": 2,
-      "teams": "pakistan",
-      "played": 1,
-      "won": 0,
-      "loss": 1,
-      "points": 0
     }
   ]
 }

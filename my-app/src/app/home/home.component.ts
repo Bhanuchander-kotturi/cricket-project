@@ -8,6 +8,6 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
   title = 'angular latest version';
-  imageUrl = 400;
+  // imageUrl = 100;
   isResponsive = false;
 }

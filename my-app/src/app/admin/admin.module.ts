@@ -9,6 +9,10 @@ import { PlayerComponent } from './player/player.component';
 import { SeriesComponent } from './series/series.component';
 import { ScheduleComponent } from './schedule/schedule.component';
 import { PointsTableComponent } from './points-table/points-table.component';
+import { SeriesDetailsComponent } from './series-details/series-details.component';
+import { UpdateMatchComponent } from './update-match/update-match.component';
+import { ContactUsInfoComponent } from './contact-us-info/contact-us-info.component';
+import { EditTeamComponent } from './edit-team/edit-team.component';
 
 
 // Angular Material Styles 
@@ -18,25 +22,31 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 
 //guards
-// import { searchguardGuard } from '../guards/searchguard.guard';
-import { formDeactivateGuard } from '../guards/form-deactivate.guard';
 import { moduleGuard } from '../guards/module.guard';
-import { SeriesDetailsComponent } from './series-details/series-details.component';
-import { UpdateMatchComponent } from './update-match/update-match.component';
-import { ContactUsInfoComponent } from './contact-us-info/contact-us-info.component';
+import { ViewPlayerComponent } from './view-player/view-player.component';
+import { EditPlayerComponent } from './edit-player/edit-player.component';
+import { resolveGuard } from '../guards/resolve.guard';
+
+
+
 
 
 
 const myRoute : Routes = [
   {path : '',component : TeamComponent},
   {path : 'teamcmp',component:TeamComponent},
+  {path : 'editTeam/:id',component:EditTeamComponent},
   {path: 'playercmp',component:PlayerComponent},
-  {path:'seriescmp', component : SeriesComponent},
+  {path : 'playerview',component:ViewPlayerComponent,},
+  {path : 'editPlayer/:id',component:EditPlayerComponent},
+  {path : 'seriescmp',component:SeriesComponent},
+  {path:'seriescmp/:id', component : SeriesComponent},
   {path:'schedulecmp', canMatch:[moduleGuard],component : ScheduleComponent},
   {path : 'seriesDetails',component:SeriesDetailsComponent},
   {path : 'matchDetails',component:UpdateMatchComponent},
   {path : 'pointsTable', component : PointsTableComponent},
   {path : 'contactInfo',component:ContactUsInfoComponent}
+  
 
 ]
 
@@ -51,6 +61,9 @@ const myRoute : Routes = [
     SeriesDetailsComponent,
     UpdateMatchComponent,
     ContactUsInfoComponent,
+    EditTeamComponent,
+    ViewPlayerComponent,
+    EditPlayerComponent,
   ],
   imports: [
     CommonModule,

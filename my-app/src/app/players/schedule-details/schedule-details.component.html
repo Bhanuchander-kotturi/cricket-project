@@ -9,6 +9,7 @@
                 <th> Team Name </th>
                 <th> Date </th>
                 <th> Time </th>
+                <th> Actions </th>
             </tr>
         </thead>
         <tbody>
@@ -17,6 +18,10 @@
                 <td> {{view.name}} </td>
                 <td> {{view.scheduleDate}} </td>
                 <td> {{view.scheduleTime}} </td>
+                <td>
+                    <button mat-button color="primary" (click)="editSchedule(view.id)">Edit</button>
+                    <button mat-button color="warn" (click)="deleteSchedule(view.id)">Delete</button>
+                </td>
             </tr>
         </tbody>
 

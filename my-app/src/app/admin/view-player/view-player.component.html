@@ -1,0 +1,28 @@
+<div class="container">
+    <h2>Player List</h2>
+    <hr/>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th> Id </th>
+                <th> Name </th>
+                <th> team </th>
+                <th> Actions </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let view of players">
+                <td> {{view.id}} </td>
+                <td> {{view.name}} </td>
+                <td> {{view.team}} </td>
+                <td>
+                    <button mat-button color="primary" (click)="editPlayer(view.id)">Edit</button>
+                    <button mat-button color="warn" (click)="deletePlayer(view.id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+
+</div>

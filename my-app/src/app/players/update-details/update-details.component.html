@@ -12,6 +12,7 @@
                 <th> Team </th>
                 <th> Bat Style </th>
                 <th> Bowl Style </th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -23,6 +24,10 @@
                 <td> {{person.team}} </td>
                 <td> {{person.batStyle}} </td>
                 <td> {{person.bowlStyle}} </td>
+                <td>
+                    <button mat-button color="primary">Edit</button>
+                    <button mat-button color="warn">Delete</button>
+                </td>
             </tr>
         </tbody>
 

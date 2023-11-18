@@ -1,0 +1,57 @@
+<div class="container">
+    <h3> Edit Schedule </h3>
+    <hr/>
+
+    <form [formGroup]="editForm" (ngSubmit)="editScheduleInfo()">
+        <div class="row">
+            <div class="col-md-5">
+                <mat-form-field>
+                    <mat-label> ID </mat-label>
+                    <input matInput type="number" autocomplete="off" formControlName="id">
+                </mat-form-field>
+                <mat-error *ngIf="(editForm.controls['id'].hasError('required') && formSubmitted) || 
+                        (editForm.get('id').invalid && editForm.get('id').touched)">
+                    Enter ID
+                </mat-error>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5">
+                <mat-form-field>
+                    <mat-label> Team Name </mat-label>
+                    <input matInput type="text" autocomplete="off" formControlName="name">
+                </mat-form-field>
+                <mat-error *ngIf="(editForm.controls['name'].hasError('required') && formSubmitted) || 
+                        (editForm.get('name').invalid && editForm.get('name').touched)">
+                    Enter Team Name 
+                </mat-error>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5">
+                <mat-form-field>
+                    <mat-label> Date </mat-label>
+                    <input matInput type="date" autocomplete="off" formControlName="scheduleDate">
+                </mat-form-field>
+                <mat-error *ngIf="(editForm.controls['scheduleDate'].hasError('required') && formSubmitted) || 
+                        (editForm.get('scheduleDate').invalid && editForm.get('scheduleDate').touched)">
+                    Enter Date  
+                </mat-error>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5">
+                <mat-form-field>
+                    <mat-label> Time </mat-label>
+                    <input matInput type="time" autocomplete="off" formControlName="scheduleTime">
+                </mat-form-field>
+                <mat-error *ngIf="(editForm.controls['scheduleTime'].hasError('required') && formSubmitted) || 
+                        (editForm.get('scheduleTime').invalid && editForm.get('scheduleTime').touched)">
+                    Enter Time 
+                </mat-error>
+            </div>
+        </div>
+        <button mat-raised-button color="primary" type="submit" [disabled]="editForm.invalid"> Update </button>
+    </form>
+
+</div>

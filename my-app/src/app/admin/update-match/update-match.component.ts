@@ -1,5 +1,6 @@
 import { Component,OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { updatePoints } from 'src/app/models/point';
 import { AdminServiceService } from 'src/app/services/admin-service.service';
 
@@ -14,7 +15,8 @@ export class UpdateMatchComponent implements OnInit {
   protected formSubmitted : boolean = false;
 
   constructor(private formBuilder : FormBuilder,
-    private adminService : AdminServiceService) {
+    private adminService : AdminServiceService,
+    private activatedRoute : ActivatedRoute) {
     
   }
 
@@ -44,8 +46,8 @@ export class UpdateMatchComponent implements OnInit {
       console.log(data);
         this.updateForm.reset();
     })
-    
   }
+
 
 
 }

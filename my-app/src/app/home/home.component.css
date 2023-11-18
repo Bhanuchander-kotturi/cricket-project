@@ -1,5 +1,5 @@
 .responsive{
     width : 100%;
-    display: grid;
+    display:flex;
     margin: 0 auto;
 }

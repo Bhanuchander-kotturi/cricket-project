@@ -1,16 +1,16 @@
 <div class="container">
-    <h2>Adding Player</h2>
-    <hr />
+    <h3>Edit Player</h3>
+    <hr/>
 
-    <form [formGroup]="playerForm" (ngSubmit)="addPlayer()">
+    <form [formGroup]="editForm" (ngSubmit)="editPlayerInfo()">
         <div class="row">
             <div class="col-md-5">
                 <mat-form-field>
                     <mat-label> ID </mat-label>
                     <input matInput type="number" autocomplete="off" formControlName="id">
                 </mat-form-field>
-                <mat-error *ngIf="(playerForm.controls['id'].hasError('required') && formSubmitted) || 
-                        (playerForm.get('id').invalid && playerForm.get('id').touched)">
+                <mat-error *ngIf="(editForm.controls['id'].hasError('required') && formSubmitted) || 
+                        (editForm.get('id').invalid && editForm.get('id').touched)">
                     Enter ID
                 </mat-error>
             </div>
@@ -21,8 +21,8 @@
                     <mat-label> Name </mat-label>
                     <input matInput type="text" autocomplete="off" formControlName="name">
                 </mat-form-field>
-                <mat-error *ngIf="(playerForm.controls['name'].hasError('required') && formSubmitted) || 
-                (playerForm.get('name').invalid && playerForm.get('name').touched)">
+                <mat-error *ngIf="(editForm.controls['name'].hasError('required') && formSubmitted) || 
+                        (editForm.get('name').invalid && editForm.get('name').touched)">
                     Enter Name
                 </mat-error>
             </div>
@@ -33,13 +33,13 @@
                     <mat-label> Team </mat-label>
                     <input matInput type="text" autocomplete="off" formControlName="team">
                 </mat-form-field>
-                <mat-error *ngIf="(playerForm.controls['team'].hasError('required') && formSubmitted) ||
-                (playerForm.get('team').invalid && playerForm.get('team').touched)">
-                    Enter Team
+                <mat-error *ngIf="(editForm.controls['team'].hasError('required') && formSubmitted) || 
+                        (editForm.get('team').invalid && editForm.get('team').touched)">
+                    Enter Team 
                 </mat-error>
             </div>
         </div>
-        <button mat-raised-button color="primary" type="submit" [disabled]="playerForm.invalid"> Submit </button>
+        <button mat-raised-button color="primary" type="submit" [disabled]="editForm.invalid"> Update </button>
     </form>
 
 </div>

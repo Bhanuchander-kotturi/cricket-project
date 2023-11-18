@@ -15,14 +15,20 @@ import {MatInputModule} from '@angular/material/input';
 import { UpdateDetailsComponent } from './update-details/update-details.component';
 import { TeamDetailsComponent } from './team-details/team-details.component';
 import { ScheduleDetailsComponent } from './schedule-details/schedule-details.component';
+import { T20TableComponent } from './t20-table/t20-table.component';
+import { OdiTableComponent } from './odi-table/odi-table.component';
+import { EditScheduleComponent } from './edit-schedule/edit-schedule.component';
+
 
 
 const myRoutings : Routes = [
-  // {path : '',component:UpdateDetailsComponent},
-  {path : 'playerDetails',component : UpdateDetailsComponent},
+  {path : 'formDetails',component : DetailsComponent},
   {path : 'updateDetails',component:UpdateDetailsComponent},
   {path : 'viewTeams',component:TeamDetailsComponent},
-  {path : 'viewSchedule',component:ScheduleDetailsComponent}
+  {path : 'viewSchedule',component:ScheduleDetailsComponent},
+  {path : 'editSchedule/:id',component:EditScheduleComponent},
+  {path : 'viewtable1',component:T20TableComponent},
+  {path : 'viewtable2',component:OdiTableComponent},
 ]
 
 
@@ -31,7 +37,10 @@ const myRoutings : Routes = [
     DetailsComponent,
     UpdateDetailsComponent,
     TeamDetailsComponent,
-    ScheduleDetailsComponent
+    ScheduleDetailsComponent,
+    T20TableComponent,
+    OdiTableComponent,
+    EditScheduleComponent,
   ],
   imports: [
     CommonModule,

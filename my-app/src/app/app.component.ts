@@ -67,6 +67,10 @@ export class AppComponent implements OnInit {
     this.router.navigate(['admin/playercmp'])
   }
 
+  navigatePlayerDetails() {
+    this.router.navigate(['admin/playerview'])
+  }
+
   navigateAdmin3(){
     this.router.navigate(['admin/seriescmp'])
   }
@@ -91,8 +95,8 @@ export class AppComponent implements OnInit {
     this.router.navigate(['admin/matchDetails'])
   }
 
-  navigatePlayer1(){
-    this.router.navigate(['player/playerDetails'])
+  navigateDetailsForm(){
+    this.router.navigate(['player/formDetails'])
   }
 
   updateDetails(){
@@ -105,6 +109,14 @@ export class AppComponent implements OnInit {
 
   viewSchedule(){
     this.router.navigate(['player/viewSchedule'])
+  }
+
+  viewTable1(){
+    this.router.navigate(['player/viewtable1'])
+  }
+
+  viewTable2(){
+    this.router.navigate(['player/viewtable2'])
   }
 
 }
