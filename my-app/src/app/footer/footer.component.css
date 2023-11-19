@@ -1,8 +1,9 @@
 h3{
     background-color: lightskyblue;
-    padding: 15px;
+    padding: 5 px;
     margin: 0;
-    position: absolute;
+    position: fixed;
     width: 100%;
     bottom: 0;
+    text-align: right;
 }

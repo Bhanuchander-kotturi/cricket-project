@@ -39,6 +39,7 @@ export class EditScheduleComponent implements OnInit {
       this.editForm.patchValue({
         id : data.id,
         name : data.name,
+        opponent : data.opponent,
         scheduleDate : data.scheduleDate,
         scheduleTime : data.scheduleTime
       })
@@ -49,6 +50,7 @@ export class EditScheduleComponent implements OnInit {
     const schedule : schedules = {
       id : this.editForm.controls['id'].value,
       name : this.editForm.controls['name'].value,
+      opponent : this.editForm.controls['opponent'].value,
       scheduleDate : this.editForm.controls['scheduleDate'].value,
       scheduleTime : this.editForm.controls['scheduleTime'].value
      }

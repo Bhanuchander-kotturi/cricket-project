@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AdminServiceService } from 'src/app/services/admin-service.service';
 import { PlayerServiceService } from 'src/app/services/player-service.service';
 
@@ -14,12 +14,13 @@ export class TeamDetailsComponent implements OnInit {
 
   constructor(private playerService: PlayerServiceService,
     private router: Router,
+    private activatedRoute: ActivatedRoute,
     private adminService: AdminServiceService) { }
 
   ngOnInit(): void {
-    this.playerService.viewTeams().subscribe((data) => {
+    this.adminService.viewTeams().subscribe((data) => {
       this.teams = data;
-      // console.log(this.teams);
+      console.log(this.teams);
     })
     this.adminService.getTeams().subscribe((data) => {
       this.teams = data;
@@ -37,8 +38,8 @@ export class TeamDetailsComponent implements OnInit {
     })
   }
 
-  editTeam(id:any){
-    this.router.navigate(['admin/editTeam/' +id])
+  editTeam(id: any) {
+    this.router.navigate(['admin/editTeam/' + id])
   }
 
 }

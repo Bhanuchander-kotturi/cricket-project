@@ -1,5 +1,5 @@
  <div class="container">
-    <h2> Players List </h2>
+    <h2> Personal Details </h2>
     <hr/>
     
     <table class="table">
@@ -12,7 +12,7 @@
                 <th> Team </th>
                 <th> Bat Style </th>
                 <th> Bowl Style </th>
-                <th>Actions</th>
+                <th> Actions </th>
             </tr>
         </thead>
         <tbody>
@@ -25,8 +25,8 @@
                 <td> {{person.batStyle}} </td>
                 <td> {{person.bowlStyle}} </td>
                 <td>
-                    <button mat-button color="primary">Edit</button>
-                    <button mat-button color="warn">Delete</button>
+                    <button mat-button color="primary" (click)="editInfo(person.id)">Edit</button>
+                    <button mat-button color="warn" (click)="deleteInfo(person.id)">Delete</button>
                 </td>
             </tr>
         </tbody>

@@ -7,6 +7,7 @@
             <tr>
                 <th> Id </th>
                 <th> Team Name </th>
+                <th> Opponent Team </th>
                 <th> Date </th>
                 <th> Time </th>
                 <th> Actions </th>
@@ -16,6 +17,7 @@
             <tr *ngFor="let view of schedules">
                 <td> {{view.id}} </td>
                 <td> {{view.name}} </td>
+                <td> {{view.opponent}} </td>
                 <td> {{view.scheduleDate}} </td>
                 <td> {{view.scheduleTime}} </td>
                 <td>

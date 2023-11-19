@@ -26,6 +26,11 @@ export class AdminServiceService {
     return this.http.post(this.url + '/teams', team ,httpOptions)
   }
 
+  //Teams component
+  viewTeams() : Observable<any>{
+    return this.http.get(this.url + '/teams', {responseType : 'json'})
+  }
+
   //Get all teams
   getTeams() : Observable<any>{
     return this.http.get(this.url +'/teams', {responseType:'json'})
@@ -132,6 +137,9 @@ export class AdminServiceService {
   viewDetails() : Observable<any>{
     return this.http.get(this.url + '/updatePoints', {responseType : 'json'})
   }
+
+
+
 
 
 

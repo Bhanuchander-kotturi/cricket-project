@@ -30,6 +30,18 @@
         <div class="row">
             <div class="col-md-5">
                 <mat-form-field>
+                    <mat-label> Opponent Team </mat-label>
+                    <input matInput type="text" autocomplete="off" formControlName="opponent">
+                </mat-form-field>
+                <mat-error *ngIf="(scheduleForm.controls['opponent'].hasError('required') && formSubmitted) || 
+                        (scheduleForm.get('opponent').invalid && scheduleForm.get('opponent').touched)">
+                    Enter Opponent Team 
+                </mat-error>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5">
+                <mat-form-field>
                     <mat-label> Date </mat-label>
                     <input matInput type="date" autocomplete="off" formControlName="scheduleDate">
                 </mat-form-field>

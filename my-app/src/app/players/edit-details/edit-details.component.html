@@ -1,0 +1,95 @@
+<div class="container">
+    <h3> Edit Details </h3>
+    <hr />
+
+    <form [formGroup]="editDetails" (ngSubmit)="editDetailsInfo()">
+        <div class="row">
+            <!-- Id Column -->
+            <div class="col-md-5">
+                <mat-form-field>
+                    <mat-label> ID </mat-label>
+                    <input matInput type="number" autocomplete="off" formControlName="id">
+                </mat-form-field>
+                <mat-error *ngIf="(editDetails.controls['id'].hasError('required') && formSubmitted) || 
+                        (editDetails.get('id').invalid && editDetails.get('id').touched)">
+                    Enter ID
+                </mat-error>
+            </div>
+            <div class="row">
+                <!-- Name Column -->
+                <div class="col-md-5">
+                    <mat-form-field>
+                        <mat-label> Name </mat-label>
+                        <input matInput type="text" autocomplete="off" formControlName="name">
+                    </mat-form-field>
+                    <mat-error *ngIf="(editDetails.controls['name'].hasError('required') && formSubmitted) || 
+                        (editDetails.get('name').invalid && editDetails.get('name').touched)">
+                        Enter Name
+                    </mat-error>
+                </div>
+                <!-- Birth Day column -->
+                <div class="col-md-5">
+                    <mat-form-field>
+                        <mat-label> Birth Day </mat-label>
+                        <input matInput type="date" autocomplete="off" formControlName="birthDay">
+                    </mat-form-field>
+                    <mat-error *ngIf="(editDetails.controls['birthDay'].hasError('required') && formSubmitted) || 
+                        (editDetails.get('birthDay').invalid && editDetails.get('birthDay').touched)">
+                        Enter Birth Day
+                    </mat-error>
+                </div>
+                <div class="row">
+
+                    <!-- Age Column -->
+                    <div class="col-md-5">
+                        <mat-form-field>
+                            <mat-label> Age </mat-label>
+                            <input matInput type="number" autocomplete="off" formControlName="age">
+                        </mat-form-field>
+                        <mat-error *ngIf="(editDetails.controls['age'].hasError('required') && formSubmitted) || 
+                        (editDetails.get('age').invalid && editDetails.get('age').touched)">
+                            Enter Age
+                        </mat-error>
+                    </div>
+                    <!-- Team column -->
+                    <div class="col-md-5">
+                        <mat-form-field>
+                            <mat-label> Team </mat-label>
+                            <input matInput type="text" autocomplete="off" formControlName="team">
+                        </mat-form-field>
+                        <mat-error *ngIf="(editDetails.controls['team'].hasError('required') && formSubmitted) || 
+                        (editDetails.get('team').invalid && editDetails.get('team').touched)">
+                            Enter Team
+                        </mat-error>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- Bat Style Column -->
+                    <div class="col-md-5">
+                        <mat-form-field>
+                            <mat-label> Bat Style </mat-label>
+                            <input matInput type="text" autocomplete="off" formControlName="batStyle">
+                        </mat-form-field>
+                        <mat-error *ngIf="(editDetails.controls['batStyle'].hasError('required') && formSubmitted) || 
+                        (editDetails.get('batStyle').invalid && editDetails.get('batStyle').touched)">
+                            Enter Bat Style
+                        </mat-error>
+                    </div>
+
+                    <!-- Bowl Style Column -->
+                    <div class="col-md-5">
+                        <mat-form-field>
+                            <mat-label> Bowl Style </mat-label>
+                            <input matInput type="text" autocomplete="off" formControlName="bowlStyle">
+                        </mat-form-field>
+                        <mat-error *ngIf="(editDetails.controls['bowlStyle'].hasError('required') && formSubmitted) || 
+                        (editDetails.get('bowlStyle').invalid && editDetails.get('bowlStyle').touched)">
+                            Enter Bowl Style
+                        </mat-error>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button mat-raised-button color="primary" type="submit" [disabled]="editDetails.invalid">Update</button>
+    </form>
+</div>

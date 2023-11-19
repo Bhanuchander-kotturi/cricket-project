@@ -1,7 +1,7 @@
 <div class="container">
     <h2>Adding Team</h2>
     <hr />
-    <!-- <app-player> -->
+    
         <form [formGroup]="teamForm" (ngSubmit)="addTeam()">
             <div class="row">
                 <div class="col-md-5">
@@ -15,18 +15,7 @@
                     </mat-error>
                 </div>
             </div>
-            <!-- <div class="row">
-                <div class="col-md-5">
-                    <mat-form-field>
-                        <mat-label> Player Names </mat-label>
-                        <input matInput type="text" autocomplete="off" formControlName="playerName">
-                    </mat-form-field>
-                    <mat-error *ngIf="(teamForm.controls['playerName'].hasError('required') && formSubmitted) || 
-                (teamForm.get('playerName').invalid && teamForm.get('playerName').touched)">
-                        Enter Player Name
-                    </mat-error>
-                </div>
-            </div> -->
+            
             <div class="row">
                 <div class="col-md-5">
                     <mat-form-field>
@@ -41,5 +30,4 @@
             </div>
             <button mat-raised-button color="primary" type="submit" [disabled]="teamForm.invalid"> Submit </button>
         </form>
-    <!-- </app-player> -->
 </div>

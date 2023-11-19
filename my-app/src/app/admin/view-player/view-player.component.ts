@@ -13,16 +13,13 @@ export class ViewPlayerComponent implements OnInit{
 
   constructor(private adminService : AdminServiceService,
     private router : Router,
-    private activatedRoute : ActivatedRoute){}
+    private activatedRoute : ActivatedRoute) {}
 
   ngOnInit(): void {
     this.adminService.viewPlayers().subscribe((data) => {
       this.players = data;
       console.log(this.players);
-    })
-    // this.players = this.activatedRoute.snapshot.data['playersData']
-    // console.log(this.players);
-    
+    });
     this.adminService.getPlayers().subscribe((data) => {
       this.players = data;
       console.log(this.players);
@@ -34,7 +31,7 @@ export class ViewPlayerComponent implements OnInit{
     this.adminService.deletePlayer(id).subscribe((data) => {
       console.log(data);
       this.router.navigateByUrl("/home", { skipLocationChange : true}).then(() => {
-        this.router.navigate(['admin/playerview'])
+        this.router.navigate(['/admin/playerview'])
       })
     })
   }

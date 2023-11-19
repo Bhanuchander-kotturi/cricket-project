@@ -11,17 +11,18 @@
   <button mat-raised-button *ngIf="isAdmin" color="primary" (click)="navigateAdmin3()">Series</button> &nbsp;&nbsp;
   <button mat-raised-button *ngIf="isAdmin" color="primary" (click)="navigateAdmin4()">schedule</button> &nbsp;&nbsp;
   <button mat-raised-button *ngIf="isAdmin" color="primary" (click)="seriesDetails()">Series Details</button> &nbsp;&nbsp;
-  <button mat-raised-button *ngIf="isAdmin" color="primary" (click)="matchDetails()">Match Details </button> &nbsp;&nbsp;
-  <button mat-raised-button *ngIf="isAdmin" color="primary" (click)="navigateAdmin5()">Points Table</button> &nbsp;&nbsp;
+  <button mat-raised-button *ngIf="isAdmin" color="primary" (click)="matchDetails()">Points Form </button> &nbsp;&nbsp;
   <button mat-raised-button *ngIf="isAdmin" color="primary" (click)="navigateContactInfo()">Contact-Us Info</button> &nbsp;&nbsp;
   <button mat-raised-button *ngIf="isAdmin" color="primary" (click)="navigateDetailsForm()">Personal Details</button> &nbsp;&nbsp;
-  <button mat-raised-button *ngIf="isPlayer" color="primary" (click)="updateDetails()">View Player Details</button> &nbsp;&nbsp;
+  <button mat-raised-button *ngIf="isPlayer" color="primary" (click)="updateDetails()">View Personal Details</button> &nbsp;&nbsp;
   <button mat-raised-button *ngIf="isPlayer" color="primary" (click)="viewTeams()">View Teams</button> &nbsp;&nbsp;
   <button mat-raised-button *ngIf="isPlayer" color="primary" (click)="viewSchedule()">View Schedule</button> &nbsp;&nbsp;
-  <button mat-raised-button *ngIf="isPlayer" color="primary" (click)="viewTable1()">Points Table(T20)</button> &nbsp;&nbsp;
-  <button mat-raised-button *ngIf="isPlayer" color="primary" (click)="viewTable2()">Points Table(ODI)</button> &nbsp;&nbsp;
+  <button mat-raised-button *ngIf="isAdmin || isPlayer" color="primary" (click)="navigateAdmin5()">Points Table</button> &nbsp;&nbsp;
+  <!-- <button mat-raised-button *ngIf="isPlayer" color="primary" (click)="viewTable1()">Points Table(T20)</button> &nbsp;&nbsp; -->
+  <!-- <button mat-raised-button *ngIf="isPlayer" color="primary" (click)="viewTable2()">Points Table(ODI)</button> &nbsp;&nbsp; -->
   <button mat-raised-button *ngIf="isLogin" color="primary" (click)="logout()">Logout</button> &nbsp;&nbsp;
 </mat-toolbar>
+
 
 <router-outlet></router-outlet>
 <app-footer></app-footer>

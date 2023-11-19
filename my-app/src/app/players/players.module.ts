@@ -18,12 +18,14 @@ import { ScheduleDetailsComponent } from './schedule-details/schedule-details.co
 import { T20TableComponent } from './t20-table/t20-table.component';
 import { OdiTableComponent } from './odi-table/odi-table.component';
 import { EditScheduleComponent } from './edit-schedule/edit-schedule.component';
+import { EditDetailsComponent } from './edit-details/edit-details.component';
 
 
 
 const myRoutings : Routes = [
   {path : 'formDetails',component : DetailsComponent},
   {path : 'updateDetails',component:UpdateDetailsComponent},
+  {path : 'editInfo/:id', component:EditDetailsComponent},
   {path : 'viewTeams',component:TeamDetailsComponent},
   {path : 'viewSchedule',component:ScheduleDetailsComponent},
   {path : 'editSchedule/:id',component:EditScheduleComponent},
@@ -41,6 +43,7 @@ const myRoutings : Routes = [
     T20TableComponent,
     OdiTableComponent,
     EditScheduleComponent,
+    EditDetailsComponent,
   ],
   imports: [
     CommonModule,

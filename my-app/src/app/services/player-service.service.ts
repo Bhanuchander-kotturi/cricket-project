@@ -26,6 +26,23 @@ export class PlayerServiceService {
     return this.http.get(this.url + '/details',{responseType : 'json'})
   }
 
+  //get all details
+  getDetails() : Observable<any> {
+    return this.http.get(this.url + '/details', {responseType:'json'})
+  }
+
+  getDetailsById(id : any) : Observable<any> {
+    return this.http.get(this.url +'/details/'+id, {responseType:'json'})
+  }
+
+  updateDetails(detail : details) : Observable<any> {
+    const httpOptions = {
+      headers : new HttpHeaders({'Content-Type' : 'application/json'})
+    }
+    console.log(detail);
+    return this.http.put(this.url + '/details/'+ detail.id,detail,httpOptions)
+  }
+
   //Teams component
   viewTeams() : Observable<any>{
     return this.http.get(this.url + '/teams', {responseType : 'json'})
@@ -66,5 +83,9 @@ export class PlayerServiceService {
   //get all players 
   getPlayers() : Observable<any> {
     return this.http.get(this.url + '/players', {responseType:'json'})
+  }
+
+  deleteInfo(id:any) : Observable<any> {
+    return this.http.delete(this.url + '/details/' +id, {responseType:'json'})
   }
 }
